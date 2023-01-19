@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input, message } from 'antd';
 
 const Register = () => {
   
@@ -12,6 +12,7 @@ const Register = () => {
     if(data && data.length>0){
       data.push(value) 
       localStorage.setItem('users',JSON.stringify(data))
+      message.success('Account create successfuly')
     }else{
       localStorage.setItem('users',JSON.stringify([value]))
 
@@ -21,12 +22,14 @@ const Register = () => {
     console.log(value);
   }
   return (
+    <>
+    <h1>User Register</h1>
     <Form
     name="basic"
     labelCol={{ span: 8 }}
     wrapperCol={{ span: 16 }}
     initialValues={{ remember: true }}
-    onFinish={handleSubmit}
+    onFinish={(values)=>handleSubmit(values)}
    
     autoComplete="off"
   >
@@ -60,6 +63,7 @@ const Register = () => {
       </Button>
     </Form.Item>
   </Form>
+  </>
   )
 }
 

@@ -18,6 +18,8 @@ const AdminRegister = () => {
     console.log(value);
   }
   return (
+    <>
+    <h1>Admin Register</h1>
     <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -29,7 +31,7 @@ const AdminRegister = () => {
   >
     <Form.Item
       label="Full Name"
-      name="Full Name"
+      name="fullName"
       rules={[{ required: true, message: 'Please input your Full Name!' }]}
     >
       <Input />
@@ -37,7 +39,7 @@ const AdminRegister = () => {
 
     <Form.Item
       label="Email"
-      name="Email"
+      name="email"
       rules={[{ required: true, message: 'Please input your Email!' }]}
     >
       <Input />
@@ -57,6 +59,7 @@ const AdminRegister = () => {
       </Button>
     </Form.Item>
   </Form>
+  </>
   )
 }
 
