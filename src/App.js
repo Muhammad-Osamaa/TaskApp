@@ -4,9 +4,7 @@ import Home from './Screens/Home';
 
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes,
 } from "react-router-dom";
 
